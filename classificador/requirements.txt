@@ -1,0 +1,4 @@
+flask==2.3.3
+flask-restx==1.1.0
+tensorflow==2.13.0
+transformers==4.33.0
