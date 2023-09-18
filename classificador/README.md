@@ -26,3 +26,6 @@ http://127.0.0.1:5000/
 
 ## classificar chamando api
 curl -X POST -H 'Content-Type: application/json' -d @sample.json http://127.0.0.1:5000/api/predict
+
+## classificar pelo huggingface
+https://huggingface.co/thiagoads/modelo-de-exemplo

@@ -1,7 +1,7 @@
 # Projeto do classificador com Deep Leaning
 
-Classificador 1 = Solução Atual c/ Random Forest em R
-Classificador 2 = Solução Proposta c/ BERTimbau Base em Python
+- Classificador 1 = Solução Atual c/ Random Forest em R
+- Classificador 2 = Solução Proposta c/ BERTimbau Base em Python
 
 ### Tamanho das imagens
 ```console
@@ -109,3 +109,17 @@ trainable params: 886969354 || all params: 886969354 || trainable%: 100.0
 # load_in_4ibt = True, LoraConfig-> r = 8
 trainable params: 1210388   || all params: 547246100 || trainable%: 0.22117800382679748
 ```
+
+### F1-Score no dataset D4
+
+```console
+classificador1
+F1-Score: 0,5553
+
+classificador2
+F1-Score: 0,8430
+```
+
+### Ranking ordenado por execuções
+
+<img src="ranking.png" alt="Ranking" width="100%" height="100%" title="Ranking"> 

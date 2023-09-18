@@ -1,7 +1,7 @@
 from transformers import AutoTokenizer, TFAutoModelForSequenceClassification
 import os
 
-model_huggingface_url = 'neuralmind/bert-base-portuguese-cased'
+model_huggingface_url = 'thiagoads/modelo-de-exemplo'
 tokenizer = AutoTokenizer.from_pretrained(model_huggingface_url)
 
 model = TFAutoModelForSequenceClassification.from_pretrained(model_huggingface_url, num_labels = 10)
