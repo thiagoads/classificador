@@ -6,6 +6,8 @@ import tensorflow as tf
 import numpy as np # definição de modelo que será validado ao receber post
 from transformers import AutoTokenizer, TFAutoModelForSequenceClassification 
 
+from cleaner import DataCleaner
+
 app = Flask(__name__)
 api = Api(app, version='1.0', title='Classificador API', description='Documentação da API do classificador')
 
@@ -26,6 +28,20 @@ model = TFAutoModelForSequenceClassification.from_pretrained(path_to_model, num_
 classes = ['Classe 0', 'Classe 1', 'Classe 2', 'Classe 3', 'Classe 4', 
            'Classe 5', 'Classe 6', 'Classe 7', 'Classe 8', 'Classe 9']
 
+my_cleaner = DataCleaner()
+
+@ns.route('/cleaner')
+class ApiResource(Resource):
+    @api.doc(description='Pré-processar um texto removendo tags, urls, e-mail, datas, números e moedas')
+    @api.expect(request_model)
+    def post(self):
+        try:
+            data = request.json
+            text_processed = my_cleaner.process(data['text'])
+            return {'text_processed': text_processed}, 200
+        except Exception as e:
+            return str(e), 400
+        
 
 @ns.route('/predict')
 class ApiResource(Resource):
