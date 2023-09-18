@@ -31,6 +31,16 @@ classificador2 (w/ cleaner)
 Wall time: 18.2 s
 ```
 
+### F1-Score no dataset D4
+
+```console
+classificador1
+F1-Score: 0,5553
+
+classificador2
+F1-Score: 0,8430
+```
+
 ### Arquitetura e parâmetros
 
 BERTimbau Base
@@ -106,18 +116,32 @@ DebertaV2ForSequenceClassification(
 # full
 trainable params: 886969354 || all params: 886969354 || trainable%: 100.0
 
-# load_in_4ibt = True, LoraConfig-> r = 8
+# load_in_4ibt = True, LoraConfig(r = 8, lora_alpha = 32, lora_dropout = 0.05)
 trainable params: 1210388   || all params: 547246100 || trainable%: 0.22117800382679748
 ```
 
-### F1-Score no dataset D4
+### Tempo de Treinamento
 
-```console
-classificador1
-F1-Score: 0,5553
+BERTimbau Base (22,15 min)
+```
+Epoch 1/4
+980/980 [==============================] - 386s 349ms/step - loss: 0.9414 - accuracy: 0.7686 - val_loss: 0.6171 - val_accuracy: 0.8214
+Epoch 2/4
+980/980 [==============================] - 317s 324ms/step - loss: 0.2652 - accuracy: 0.9352 - val_loss: 0.6031 - val_accuracy: 0.8245
+Epoch 3/4
+980/980 [==============================] - 313s 319ms/step - loss: 0.1351 - accuracy: 0.9682 - val_loss: 0.6732 - val_accuracy: 0.8137
+Epoch 4/4
+980/980 [==============================] - 313s 320ms/step - loss: 0.0771 - accuracy: 0.9828 - val_loss: 0.7275 - val_accuracy: 0.8183
+```
 
-classificador2
-F1-Score: 0,8430
+Albertina PT-BR (4h 47min 37 s)
+```
+ [7840/7840 4:47:37, Epoch 4/4]
+Epoch 	Training Loss 	Validation Loss
+1 	0.394800 	0.522636
+2 	0.235600 	0.682027
+3 	0.119700 	0.725052
+4 	0.122500 	0.805629
 ```
 
 ### Ranking ordenado por execuções
