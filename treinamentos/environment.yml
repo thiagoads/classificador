@@ -1,0 +1,17 @@
+name: tcc
+channels:
+  - defaults
+dependencies:
+  - jupyter=1.0.0
+  - python=3.9.16
+  - spacy=3.3.1
+  - nltk=3.7
+  - pandas=1.5.3
+  - scikit-learn=1.2.1
+  - gensim=4.3.0
+  - matplotlib=3.7.1
+  # downgrade do tensorflow da versão 2.11.0 para a 2.10.0. 
+  # https://github.com/huggingface/transformers/issues/20393  
+  - tensorflow=2.10.0
+  - transformers=4.24.0
+  - imbalanced-learn=0.10.1

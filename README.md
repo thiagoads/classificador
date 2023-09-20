@@ -1,4 +1,4 @@
-# Projeto do classificador com Deep Leaning
+# Projeto do classificador com Deep Learning
 
 - Classificador 1 = Solução Atual c/ Random Forest em R
 - Classificador 2 = Solução Proposta c/ BERTimbau Base em Python
